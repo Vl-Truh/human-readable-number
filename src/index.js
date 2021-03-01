@@ -43,6 +43,6 @@ module.exports = function toReadable (number) {
     const ones = ten_check.condition ? 0 : ten_check.value % 10;
     const ones_string = ones ? `${words[ones]}` : "";
 
-    return `${hundred} ${tenths_string} ${ones_string}`;
+    return `${hundred} ${tenths_string} ${ones_string}`.trim();
 };
 
