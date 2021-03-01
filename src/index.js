@@ -29,7 +29,7 @@ module.exports = function toReadable (number) {
         90: "ninety"
     };
 
-    if (number == 0) return "zero";
+    if (number === 0) return "zero";
 
     const hundred = ~~(number / 100) ? `${words[~~(number / 100)]} hundred` : "";
 
