@@ -38,11 +38,11 @@ module.exports = function toReadable (number) {
         condition: number % 100 >= 10 && number % 100 <= 20
     };
     const tenths = ten_check.condition ? ten_check.value : ~~(ten_check.value / 10) * 10;
-    const tenths_string = tenths ? `${words[tenths]}` : "";
+    const tenths_string = tenths ? ` ${words[tenths]}` : "";
 
     const ones = ten_check.condition ? 0 : ten_check.value % 10;
-    const ones_string = ones ? `${words[ones]}` : "";
+    const ones_string = ones ? ` ${words[ones]}` : "";
 
-    return `${hundred} ${tenths_string}${ones_string}`.trim();
+    return `${hundred}${tenths_string}${ones_string}`.trim();
 };
 
