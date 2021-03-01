@@ -1,63 +1,48 @@
 module.exports = function toReadable (number) {
-	const underTwenty = ["zero",
-                         "one",
-                         "two", 
-                         "three", 
-                         "four", 
-                         "five",
-						 "six",
-                         "seven", 
-                         "eight", 
-                         "nine", 
-                         "ten",
-						 "eleven",
-                         "twelve", 
-                         "thirteen",
-                         "fourteen",
-                         "fifteen",
-						 "sixteen",
-                         "seventeen",
-                         "eighteen",
-                         "nineteen",
-                         "twenty"
-                        ];
-    
-	const tens = ["twenty",
-                  "thirty",
-                  "forty",
-                  "fifty", 
-                  "sixty",
-                  "seventy", 
-                  "eighty", 
-                  "ninety"
-                 ];
-    
-    let final = "";
-    
-	if(number == 0){
-		return underTwenty[0];
-	}
-    
-	if(Math.floor(number/100)){
-		final += underTwenty[Math.floor(number/100)] + " hundred";
-		number -= Math.floor(number/100)*100;
-	}
-    
-	if(Math.floor(number/10)>1 && number != 20){
-		if(final.length != 0){
-			final += " ";
-		}
-		final += tens[Math.floor(number/10)-2];
-		number -= Math.floor(number/10)*10;
-	}
-    
-	if(number == 0){
-			return final;
-	}
-    
-	if(result.length != 0){
-		final += " ";
-	}
-    
-	return final += underTwenty[number]
-}
+	 const words = {
+        1: "one",
+        2: "two",
+        3: "three",
+        4: "four",
+        5: "five",
+        6: "six",
+        7: "seven",
+        8: "eight",
+        9: "nine",
+        10: "ten",
+        11: "eleven",
+        12: "twelve",
+        13: "thirteen",
+        14: "fourteen",
+        15: "fifteen",
+        16: "sixteen",
+        17: "seventeen",
+        18: "eighteen",
+        19: "nineteen",
+        20: "twenty",
+        30: "thirty",
+        40: "forty",
+        50: "fifty",
+        60: "sixty",
+        70: "seventy",
+        80: "eighty",
+        90: "ninety"
+    };
+
+    if (number == 0) return "zero";
+
+    const hundred = ~~(number / 100) ? `${words[~~(number / 100)]} hundred` : "";
+
+    const ten_check = {
+        value: number % 100,
+        condition: number % 100 >= 10 && number % 100 <= 20
+    };
+    const tenths = ten_check.condition ? ten_check.value : ~~(ten_check.value / 10) * 10;
+    const tenths_string = tenths ? `${words[tenths]}` : "";
+
+    const ones = ten_check.condition ? 0 : ten_check.value % 10;
+    const ones_string = ones ? `${words[ones]}` : "";
+
+    return `${hundred} ${tenths_string} ${ones_string}`;
+};
+
