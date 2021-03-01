@@ -2,50 +2,50 @@ module.exports = function toReadable (n) {
   let res = '';
 
     const underTwenty = [
-        'Zero',
-        'One',
-        'Two',
-        'Three',
-        'Four',
-        'Five',
-        'Six',
-        'Seven',
-        'Eight',
-        'Nine',
-        'Ten',
-        'Eleven',
-        'Twelve',
-        'Thirteen',
-        'Fourteen',
-        'Fiveteen',
-        'Sixteen',
-        'Seventeen',
-        'Eighteen',
-        'Nineteen'
+        'zero',
+        'one',
+        'two',
+        'three',
+        'four',
+        'five',
+        'six',
+        'seven',
+        'eight',
+        'nine',
+        'ten',
+        'eleven',
+        'twelve',
+        'thirteen',
+        'fourteen',
+        'fifteen',
+        'sixteen',
+        'seventeen',
+        'eighteen',
+        'nineteen'
     ]
 
     const twoDigit = [
-        'Ten',
-        'Twenty',
-        'Thirty',
-        'Fourty',
-        'Fivty',
-        'Sixty',
-        'Seventy',
-        'Eighty',
-        'Ninety'
+        'ten',
+        'twenty',
+        'thirty',
+        'forty',
+        'fifty',
+        'sixty',
+        'seventy',
+        'eighty',
+        'ninety'
     ]
 
     const threeDigit = [
-        'One hundred',
-        'Two hundred',
-        'Three hundred',
-        'Four hundred',
-        'Five hundred',
-        'Six hundred',
-        'Seven hundred',
-        'Eight hundred',
-        'Nine hundred',
+        'one hundred',
+        'two hundred',
+        'three hundred',
+        'four hundred',
+        'five hundred',
+        'six hundred',
+        'seven hundred',
+        'eight hundred',
+        'nine hundred',
 
     ]
 
